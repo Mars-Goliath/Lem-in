@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 20:26:26 by mlambert          #+#    #+#             */
-/*   Updated: 2017/06/29 19:16:10 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/07/03 02:57:49 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void		show(t_lem *lem)
 int			check_sons(t_lem *lem, t_room *room, t_link **link)
 {
 	*link = room->first_link;
-
 	if ((*link)->room == NULL)
 		return (0);
 	while ((*link)->next != NULL)
@@ -40,11 +39,10 @@ int			check_sons(t_lem *lem, t_room *room, t_link **link)
 	}
 	if ((*link)->room->weight == 0)
 		return (1);
-
 	return (0);
 }
 
-int			path_search(t_lem *lem, t_room *room, int	n)
+int			path_search(t_lem *lem, t_room *room, int n)
 {
 	if (room == lem->end)
 	 	n = 0;
@@ -67,11 +65,11 @@ int			path_search(t_lem *lem, t_room *room, int	n)
 
 int			solve(t_lem *lem)
 {
-	lem->end->weight = -1;
 	if (lem->start == NULL)
 		return (-6);
 	if (lem->end == NULL)
 		return (-7);
+	lem->end->weight = -1;
 	path_search(lem, lem->end, 0);
 	if (lem->start->weight == 0)
 		return (-5);

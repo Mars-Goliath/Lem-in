@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/27 17:08:35 by mlambert          #+#    #+#             */
-/*   Updated: 2017/06/30 18:10:33 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/06/30 19:35:08 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ants_n_rooms(t_lem *lem, t_room *path)
 {
-	path->ants_nb = lem->colony - lem->start->ants_nb - 1; 		//need to think about end-start link;
+	path->ants_nb = lem->colony - lem->start->ants_nb - 1;
 	if (path == lem->end)
 	{
 		path->ants_nb += 1;
@@ -55,7 +55,7 @@ void	move(t_room *path, t_lem *lem)
 		path->link = on_the_way(lem, path);
 		if (path->link->room == lem->start && lem->start->ants_nb != 0)
 		{
-			path->ants_nb = lem->colony - lem->start->ants_nb + 1; 		//need to think about end-start link;
+			path->ants_nb = lem->colony - lem->start->ants_nb + 1;
 			lem->start->ants_nb -= 1;
 			ft_printf("L%d %s", path->ants_nb, path->name);
 		}

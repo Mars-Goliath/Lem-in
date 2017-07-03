@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 01:35:01 by mlambert          #+#    #+#             */
-/*   Updated: 2017/06/30 18:26:04 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/07/03 05:00:08 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ int			check_format(t_lem *lem, char *line, int *i)
 	xy = 0;
 	if (ft_isdigit(line[*i - 1]) != 1)
 		return (-1);
-	while(*i != 0 && xy != 2)
+	while (*i != 0 && xy != 2)
 	{
 		*i -= 1;
 		while (xy != 2 && *i != 0 && line[*i] != ' ')
 		{
 			if (ft_isdigit(line[*i]) != 1)
-				return(-1);
+				return (-1);
 			*i -= 1;
 		}
-		xy = line[*i] = ' ' ? xy + 1 : xy;
+		if (line[*i] == ' ')
+			xy += 1;
 		if (*i != 0 && xy != 2 && line[*i] == ' ')
 			if (ft_isdigit(line[*i - 1]) != 1)
 				return (-1);
@@ -80,8 +81,8 @@ int			room_specs(char *line, t_lem *lem, int start_1end_2)
 	i = (int)ft_strlen(line);
 	if (lem->phase == 1)
 		return (-1);
-	if (check_format(lem, line, &i) == -1)		// check values of the function to be sure.
-		return (-1);
+	if (check_format(lem, line, &i) == -1)
+		return (-2);
 	if (*line == 'L')
 		return (-2);
 	salle = room_generation(lem);

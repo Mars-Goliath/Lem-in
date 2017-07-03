@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 17:19:45 by kneth             #+#    #+#             */
-/*   Updated: 2017/06/07 04:35:27 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/06/30 19:39:01 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define ZEROES_ONE 0x101010101010101
 # define ONE_ZEROES 0x8080808080808080
 # include <string.h>
-# include					"ft_printf.h"
 
 typedef	struct		s_list
 {

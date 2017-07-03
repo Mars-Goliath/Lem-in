@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/26 05:38:07 by mlambert          #+#    #+#             */
-/*   Updated: 2017/06/30 18:24:35 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/06/30 20:18:45 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	init_room(t_lem *lem)
 {
-	//lem->id_of_the_room_before = 0;
-	//	room_array_generation(lem);
 	lem->room->name = NULL;
 	lem->room->ants_nb = 0;
 	lem->room->path_locked = 0;
@@ -34,7 +32,7 @@ void	init_lem(t_lem *lem)
 {
 	lem->colony = -1;
 	lem->buffer = NULL;
-	lem->nb_rooms = 0;
+	lem->paths = 0;
 	lem->phase = 0;
 	lem->match = 0;
 	lem->start = NULL;
